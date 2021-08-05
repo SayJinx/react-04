@@ -22,12 +22,9 @@ function App() {
     // TODO: Inside each of the following handlers, update the corresponding numbers property from state.
     // Within the food and exercise handlers, you will need to update the net cal as well.
     const handleUpdateSteps = (amount) => {
-        // You have two options here: use prevState OR make a copy of the object using the spread operator and then use that copy to set the new values.
-        setNumbers(prevState => {
-            return {
-                ...prevState,
-                steps: amount,
-            }
+        // use prevState to change just one property of the entire numbers object
+        setTrackedNumbers((prevState) => {
+            return { ...prevState, steps: amount}
         });
 
     };
